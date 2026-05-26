@@ -1,0 +1,99 @@
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.about-text strong {
+  color: var(--text-main);
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.pillar-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.pillar-icon {
+  color: var(--accent-purple);
+  background: rgba(155, 81, 224, 0.1);
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.pillar-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.pillar-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Code Mockup Styling */
+.about-visual {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: rgba(13, 13, 22, 0.8);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.mockup-header {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 16px;
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot-red { background-color: #ff5f56; }
+.dot-yellow { background-color: #ffbd2e; }
+.dot-green { background-color: #27c93f; }
+
+.mockup-body {
+  padding: 24px;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #e5e5e5;
+  overflow-x: auto;
+}
+
+.code-keyword { color: #ff7b72; }
+.code-var { color: #79c0ff; }
+.code-string { color: #a5d6ff; }
+.code-function { color: #d2a8ff; }
+
+@media (max-width: 992px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
