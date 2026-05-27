@@ -1,6 +1,30 @@
 import { useEffect, useState, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import './Milestones.css';
+
+const Counter = ({ value }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (inView) {
+      let start = null;
+      const duration = 2000;
+      const step = (timestamp) => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        setCount(Math.floor(progress * value));
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+  }, [inView, value]);
+
+  return <span ref={ref}>{count}</span>;
+};
 
 const milestonesData = [
   { id: 1, label: 'Projects Delivered', value: 12, suffix: '+' },
@@ -51,7 +75,7 @@ const Milestones = () => {
           >
             <div className={`stat-value ${isVisible ? 'animate-up' : ''}`}>
               <span className="text-gradient-emerald">
-                {isVisible ? stat.value : 0}
+                <Counter value={stat.value} />
               </span>
               <span className="stat-suffix">{stat.suffix}</span>
             </div>

@@ -1,24 +1,31 @@
+.about-section {
+  padding: 8rem 2rem;
+}
+
 .about-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .about-text {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--text-muted);
   margin-bottom: 1.5rem;
+  line-height: 1.7;
 }
 
 .about-text strong {
-  color: var(--text-main);
+  color: var(--accent-primary);
 }
 
 .pillars-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
   margin-top: 3rem;
 }
 
@@ -29,33 +36,38 @@
 }
 
 .pillar-icon {
-  color: var(--accent-purple);
-  background: rgba(155, 81, 224, 0.1);
-  padding: 10px;
+  color: var(--accent-primary);
+  background: rgba(30, 58, 138, 0.08);
+  padding: 12px;
   border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(30, 58, 138, 0.05);
 }
 
 .pillar-title {
-  font-size: 1.1rem;
-  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-main);
+  font-weight: 700;
 }
 
 .pillar-desc {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: var(--text-muted);
+  line-height: 1.5;
 }
 
-/* Code Mockup Styling */
+/* Light IDE Mockup Styling */
 .about-visual {
   padding: 0;
   overflow: hidden;
   border-radius: 16px;
-  background: rgba(13, 13, 22, 0.8);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  background: #ffffff;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  border: 1px solid var(--glass-border);
 }
 
 .mockup-header {
-  background: rgba(255, 255, 255, 0.05);
+  background: #f8fafc;
   padding: 12px 16px;
   display: flex;
   gap: 8px;
@@ -74,17 +86,19 @@
 
 .mockup-body {
   padding: 24px;
-  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  font-family: 'Space Mono', 'Courier New', Courier, monospace;
   font-size: 0.95rem;
-  line-height: 1.6;
-  color: #e5e5e5;
+  line-height: 1.7;
+  color: #334155;
   overflow-x: auto;
 }
 
-.code-keyword { color: #ff7b72; }
-.code-var { color: #79c0ff; }
-.code-string { color: #a5d6ff; }
-.code-function { color: #d2a8ff; }
+/* GitHub Light Theme Syntax */
+.code-keyword { color: #d73a49; font-weight: bold; }
+.code-variable { color: #005cc5; }
+.code-string { color: #032f62; }
+.code-function { color: #6f42c1; }
+.indent { padding-left: 20px; }
 
 @media (max-width: 992px) {
   .about-container {

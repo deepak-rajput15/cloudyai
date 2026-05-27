@@ -1,16 +1,19 @@
 .contact-section {
-  padding: 10rem 2rem;
+  padding: 8rem 2rem;
   position: relative;
   z-index: 2;
 }
 
-/* Unified Glass Panel Layout */
+/* Unified Panel Layout */
 .contact-unified-panel {
-  padding: 0; /* Remove default glass padding */
+  padding: 0; 
   overflow: hidden;
   max-width: 1100px;
   margin: 0 auto;
-  border-radius: 30px;
+  border-radius: 24px;
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow-hover);
+  border: 1px solid var(--glass-border);
 }
 
 .contact-unified-grid {
@@ -18,12 +21,11 @@
   grid-template-columns: 1fr 1.6fr;
 }
 
-/* Sidebar Information */
+/* Sidebar Information (Navy Blue Background) */
 .contact-sidebar {
-  background: rgba(0, 0, 0, 0.25);
+  background: var(--accent-primary);
   padding: 4rem 3rem;
   position: relative;
-  border-right: 1px solid var(--glass-border);
   overflow: hidden;
 }
 
@@ -31,10 +33,11 @@
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #fff;
+  font-weight: 800;
 }
 
 .sidebar-desc {
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 3rem;
   font-size: 1.1rem;
   line-height: 1.6;
@@ -56,32 +59,33 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: rgba(0, 210, 255, 0.08);
-  border: 1px solid rgba(0, 210, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-blue);
+  color: #fff;
   flex-shrink: 0;
   transition: all 0.3s ease;
 }
 
 .method-item:hover .method-icon-wrap {
-  background: var(--accent-blue);
-  color: #fff;
-  box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+  background: #fff;
+  color: var(--accent-primary);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .method-item h5 {
-  color: var(--accent-blue);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 0.4rem;
   letter-spacing: 0.1em;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .method-item p {
-  color: #e2e8f0;
+  color: #fff;
   line-height: 1.6;
+  font-weight: 500;
 }
 
 .sidebar-glow {
@@ -90,9 +94,9 @@
   left: -100px;
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle, rgba(155, 81, 224, 0.25), transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
   filter: blur(50px);
-  z-index: -1;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -102,6 +106,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: var(--glass-bg);
 }
 
 .premium-form {
@@ -116,7 +121,7 @@
   gap: 2rem;
 }
 
-/* Floating Label Inputs */
+/* Floating Label Inputs for Light Theme */
 .input-group {
   position: relative;
   margin-top: 1rem;
@@ -125,23 +130,23 @@
 .input-group input,
 .input-group textarea {
   width: 100%;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 12px;
   padding: 1.25rem 1.5rem;
-  color: #fff;
+  color: var(--text-main);
   font-size: 1.05rem;
   font-family: inherit;
   outline: none;
-  transition: all 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+  transition: all 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
   resize: vertical;
 }
 
 .input-group input:focus,
 .input-group textarea:focus {
-  background: rgba(0, 210, 255, 0.05);
-  border-color: rgba(0, 210, 255, 0.5);
-  box-shadow: 0 0 25px rgba(0, 210, 255, 0.1);
+  background: #fff;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.1);
 }
 
 .input-group label {
@@ -162,33 +167,33 @@
   top: -1.6rem;
   left: 0.5rem;
   font-size: 0.85rem;
-  color: var(--accent-blue);
-  font-weight: 500;
+  color: var(--accent-primary);
+  font-weight: 600;
   letter-spacing: 0.05em;
 }
 
 /* Premium Submit Button */
 .premium-submit-btn {
   align-self: flex-start;
-  background: #fff;
-  color: #000;
+  background: var(--accent-primary);
+  color: #fff;
   padding: 16px 42px;
   border-radius: 40px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.05rem;
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  cursor: none; /* Let custom cursor handle hover */
-  transition: all 0.4s cubic-bezier(0.1, 0.9, 0.2, 1);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
   margin-top: 1rem;
+  border: none;
 }
 
 .premium-submit-btn:hover:not(:disabled) {
-  background: var(--accent-blue);
-  color: #fff;
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(0, 210, 255, 0.3);
+  background: var(--accent-secondary);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(30, 58, 138, 0.25);
 }
 
 .btn-icon {
@@ -205,7 +210,7 @@
 
 .premium-submit-btn.success {
   background: var(--accent-emerald);
-  color: #000;
+  color: #fff;
   pointer-events: none;
 }
 
@@ -215,8 +220,6 @@
     grid-template-columns: 1fr;
   }
   .contact-sidebar {
-    border-right: none;
-    border-bottom: 1px solid var(--glass-border);
     padding: 3rem 2.5rem;
   }
   .contact-form-area {

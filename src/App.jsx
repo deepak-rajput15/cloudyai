@@ -1,50 +1,38 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Milestones from './components/Milestones';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
-import CustomCursor from './components/CustomCursor';
+import { Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
+
+// Pages
+import HomePage from './pages/HomePage';
+import WebDevPage from './pages/WebDevPage';
+import AppDevPage from './pages/AppDevPage';
+import DevOpsPage from './pages/DevOpsPage';
 
 function App() {
   return (
     <>
       <CustomCursor />
-      <div className="noise-overlay"></div>
-      
-      {/* Background Ambience */}
+      <div className="light-grid-overlay"></div>
       <div className="bg-glow-orb orb-1"></div>
       <div className="bg-glow-orb orb-2"></div>
 
+      <Navbar />
+
       <AnimatePresence mode="wait">
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Services />
-          <Milestones />
-          <Testimonials />
-          <Contact />
-        </main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/services/web-development" element={<WebDevPage />} />
+          <Route path="/services/app-development" element={<AppDevPage />} />
+          <Route path="/services/devops-consulting" element={<DevOpsPage />} />
+        </Routes>
       </AnimatePresence>
 
-      {/* Footer */}
-      <footer style={{ 
-        textAlign: 'center', 
-        padding: '4rem 2rem', 
-        borderTop: '1px solid var(--glass-border)',
-        color: 'var(--text-muted)'
-      }}>
-        <div style={{ marginBottom: '1.5rem', fontWeight: 600, fontSize: '1.5rem' }}>
-          <span style={{ color: '#fff' }}>cloudy</span>
-          <span className="text-gradient">ai</span>
-        </div>
-        <p className="font-mono">&copy; {new Date().getFullYear()} CLOUDYAI. ENGINEERING THE FUTURE.</p>
-      </footer>
+      <Footer />
     </>
   );
 }
 
 export default App;
+

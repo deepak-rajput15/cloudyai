@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: var(--nav-height);
+  height: var(--nav-height, 80px);
   z-index: 1000;
   transition: all 0.3s ease;
   padding: 0 2rem;
@@ -12,11 +12,11 @@
 }
 
 .navbar.scrolled {
-  background: rgba(7, 7, 10, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--glass-border);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
 
 .nav-container {
@@ -38,12 +38,11 @@
 }
 
 .brand-icon {
-  color: var(--accent-blue);
-  filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.5));
+  color: var(--accent-primary);
 }
 
 .brand-text {
-  color: #fff;
+  color: var(--text-main);
 }
 
 .desktop-nav {
@@ -52,14 +51,22 @@
   gap: 2rem;
 }
 
-.nav-link {
+.nav-link, .nav-dropdown-trigger {
   font-weight: 500;
   color: var(--text-muted);
   position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.95rem;
+  font-family: inherit;
 }
 
-.nav-link:hover {
-  color: #fff;
+.nav-link:hover, .nav-dropdown-trigger:hover {
+  color: var(--accent-primary);
 }
 
 .nav-link::after {
@@ -69,24 +76,46 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent-blue);
+  background: var(--accent-primary);
   transition: width 0.3s ease;
-  box-shadow: 0 0 10px var(--accent-blue);
 }
 
 .nav-link:hover::after {
   width: 100%;
 }
 
+.nav-dropdown-trigger svg {
+  transition: transform 0.3s;
+}
+.nav-dropdown-trigger svg.rotated {
+  transform: rotate(180deg);
+}
+
 .nav-btn {
   padding: 8px 24px;
   font-size: 0.9rem;
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-btn:hover {
+  background: var(--accent-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.2);
 }
 
 .mobile-toggle {
   display: none;
-  color: #fff;
+  color: var(--text-main);
   z-index: 1001;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .mobile-nav {
@@ -95,14 +124,14 @@
   right: -100%;
   width: 300px;
   height: 100vh;
-  background: rgba(19, 19, 32, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
   border-left: 1px solid var(--glass-border);
   display: flex;
   flex-direction: column;
   padding: 100px 2rem 2rem;
   transition: right 0.3s ease-in-out;
-  box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+  box-shadow: -10px 0 30px rgba(0,0,0,0.05);
 }
 
 .mobile-nav.open {
@@ -115,16 +144,87 @@
   padding: 1rem 0;
   border-bottom: 1px solid var(--glass-border);
   color: var(--text-muted);
+  text-decoration: none;
 }
 
 .mobile-link:hover {
-  color: #fff;
+  color: var(--accent-primary);
   padding-left: 10px;
 }
 
 .mobile-btn {
   margin-top: 2rem;
   text-align: center;
+  width: 100%;
+}
+
+/* Services Dropdown */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 550px;
+  box-shadow: var(--glass-shadow-hover);
+  z-index: 2000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.nav-dropdown-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  gap: 0.15rem;
+}
+
+.nav-dropdown-item strong {
+  color: var(--text-main);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.nav-dropdown-item span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: 'Outfit', sans-serif;
+}
+
+.nav-dropdown-item:hover {
+  background: rgba(30, 58, 138, 0.05);
+}
+
+.nav-dropdown-item:hover strong {
+  color: var(--accent-primary);
+}
+
+/* Mobile service links */
+.mobile-services-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  padding: 1rem 0 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.mobile-service-link {
+  font-size: 1rem;
+  padding-left: 0.75rem;
 }
 
 @media (max-width: 768px) {

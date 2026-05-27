@@ -1,0 +1,210 @@
+/* Service Page Shared Styles */
+
+/* Hero */
+.svc-hero {
+  min-height: 85vh;
+  padding: calc(var(--nav-height) + 3rem) 2rem 4rem;
+  text-align: center;
+  position: relative;
+}
+.svc-hero-content {
+  max-width: 820px;
+  margin: 0 auto;
+}
+.svc-h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+  margin: 1.5rem 0 1.2rem;
+  letter-spacing: -0.03em;
+}
+.svc-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+}
+.svc-hero-cta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Features */
+.svc-features-section {
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.svc-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.svc-feature-card {
+  padding: 2rem;
+  border-radius: 16px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.svc-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+.svc-feature-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(99, 102, 241, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  margin-bottom: 1.2rem;
+}
+.svc-feature-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+.svc-feature-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* Tech Stack */
+.svc-stack-section {
+  padding: 4rem 2rem;
+  background: rgba(255,255,255,0.015);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+}
+.svc-stack-section .section-header {
+  max-width: 1200px;
+  margin: 0 auto 2.5rem;
+}
+.svc-stack-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+.svc-stack-tag {
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 100px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  transition: all 0.25s;
+  background: rgba(255,255,255,0.03);
+}
+.svc-stack-tag:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(99, 102, 241, 0.08);
+}
+
+/* Benefits */
+.svc-benefits-section {
+  padding: 5rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.svc-benefits-container {
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+}
+.svc-benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  text-align: left;
+}
+.svc-benefits-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.benefit-check {
+  color: var(--accent-emerald);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* FAQ */
+.svc-faq-section {
+  padding: 5rem 2rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.svc-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+.svc-faq-item {
+  padding: 1.8rem 2rem;
+  border-radius: 14px;
+}
+.svc-faq-q {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.6rem;
+}
+.svc-faq-a {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+/* Final CTA */
+.svc-cta-section {
+  padding: 4rem 2rem 6rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.svc-cta-box {
+  padding: 3.5rem 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+}
+.svc-cta-heading {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: #fff;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+.svc-cta-sub {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+.svc-cta-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .svc-benefits-list { grid-template-columns: 1fr; }
+  .svc-benefits-container { padding: 2rem 1.5rem; }
+  .svc-faq-item { padding: 1.4rem 1.2rem; }
+}
