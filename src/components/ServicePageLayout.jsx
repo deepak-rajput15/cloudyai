@@ -131,7 +131,7 @@ export const ServiceCTA = ({ heading, sub }) => (
       <p className="svc-cta-sub">{sub}</p>
       <div className="svc-cta-btns">
         <a href="/#contact" className="btn-primary">Book Free Consultation</a>
-        <a href="tel:+919876543210" className="btn-outline">Call Us Now</a>
+        <a href="tel:+917500620349" className="btn-outline">Call Us Now</a>
       </div>
     </motion.div>
   </section>

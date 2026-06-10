@@ -1,7 +1,12 @@
 .site-footer {
   background: rgba(5, 5, 10, 0.95);
-  border-top: 1px solid var(--glass-border);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 5rem 2rem 2rem;
+  /* Override text colors for dark background */
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --text-secondary: #f1f5f9;
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 .footer-container {

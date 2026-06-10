@@ -75,11 +75,11 @@ const Footer = () => {
             <ul>
               <li>
                 <Mail size={15} />
-                <a href="mailto:hello@cloudyai.in" className="footer-link">hello@cloudyai.in</a>
+                <a href="mailto:Info.cloudyai@gmail.com" className="footer-link">Info.cloudyai@gmail.com</a>
               </li>
               <li>
                 <Phone size={15} />
-                <a href="tel:+919876543210" className="footer-link">+91 98765 43210</a>
+                <a href="tel:+917500620349" className="footer-link">+91 7500620349</a>
               </li>
               <li>
                 <MapPin size={15} />

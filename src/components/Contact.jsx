@@ -86,7 +86,7 @@ const Contact = () => {
                 <div className="method-icon-wrap"><Mail size={22} /></div>
                 <div>
                   <h5 className="font-mono">EMAIL</h5>
-                  <p>hello@cloudyai.com</p>
+                  <p>Info.cloudyai@gmail.com</p>
                 </div>
               </div>
               <div className="method-item">
